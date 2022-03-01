@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pa.c                                               :+:      :+:    :+:   */
+/*   ft_funct2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wfermey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/28 15:03:15 by wfermey           #+#    #+#             */
-/*   Updated: 2022/02/28 15:18:31 by wfermey          ###   ########.fr       */
+/*   Created: 2022/03/01 14:19:00 by wfermey           #+#    #+#             */
+/*   Updated: 2022/03/01 15:30:29 by wfermey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
+#include "printf.h"
 
-typedef	int(*pointeurfunct)(char *);
-
-int	ft_strlen(char *str)
+void	ft_putchar(char c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);	
+	write(1, &c, 1);
 }
 
-int	main(void)
+int	ft_printchar(int c)
 {
-	pointeurfunct	pf;
-
-	pf = ft_strlen;
-	printf("%d", pf("Hello World"));
+	write(1, &c, 1);
+	return (1);
 }
