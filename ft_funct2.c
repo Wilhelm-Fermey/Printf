@@ -3,22 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   ft_funct2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wfermey <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: wilhelmfermey <marvin@42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/01 14:19:00 by wfermey           #+#    #+#             */
-/*   Updated: 2022/03/01 15:30:29 by wfermey          ###   ########.fr       */
+/*   Created: 2022/03/02 08:27:25 by wilhelmfermey     #+#    #+#             */
+/*   Updated: 2022/03/02 14:33:59 by wilhelmfermey    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-void	ft_putchar(char c)
+int	ft_intlen_un(unsigned int nb)
 {
-	write(1, &c, 1);
+	int	count;
+
+	count = 0;
+	while (nb)
+	{
+		count++;
+		nb = nb / 10;
+	}
+	return (count);
 }
 
-int	ft_printchar(int c)
+int	ft_printnbr_un(unsigned int nb)
 {
-	write(1, &c, 1);
+	int	res;
+
+	res = ft_intlen_un(nb);
+	if (nb > 9)
+	{
+		ft_printnbr_un(nb / 10);
+		ft_printnbr_un(nb % 10);
+	}
+	else
+		ft_putchar(nb + '0');
+	return (res);
+}
+
+int	ft_print_percent(void)
+{
+	write(1, "%", 1);
 	return (1);
 }
