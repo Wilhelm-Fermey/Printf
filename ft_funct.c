@@ -6,7 +6,7 @@
 /*   By: wfermey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 14:19:00 by wfermey           #+#    #+#             */
-/*   Updated: 2022/03/02 08:52:00 by wilhelmfermey    ###   ########.fr       */
+/*   Updated: 2022/03/03 08:44:20 by wfermey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ int	ft_printstr(char *str)
 {
 	int	i;
 
+	if (str == NULL)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 	i = 0;
 	while (str[i])
 	{
@@ -43,6 +48,8 @@ int	ft_intlen(int nb)
 	count = 0;
 	if (nb < 0)
 		count++;
+	if (nb == 0)
+		count++;
 	while (nb)
 	{
 		count++;
@@ -53,7 +60,8 @@ int	ft_intlen(int nb)
 
 int	ft_printnbr(int nb)
 {
-	int	res;
+	int				res;
+	unsigned int	nbr;
 
 	res = ft_intlen(nb);
 	if (nb < 0)
@@ -61,12 +69,13 @@ int	ft_printnbr(int nb)
 		nb = -nb;
 		ft_putchar('-');
 	}
-	if (nb > 9)
+	nbr = nb;
+	if (nbr > 9)
 	{
-		ft_printnbr(nb / 10);
-		ft_printnbr(nb % 10);
+		ft_printnbr(nbr / 10);
+		ft_printnbr(nbr % 10);
 	}
 	else
-		ft_putchar(nb + '0');
+		ft_putchar(nbr + '0');
 	return (res);
 }

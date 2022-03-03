@@ -6,7 +6,7 @@
 /*   By: wilhelmfermey <marvin@42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 13:34:30 by wilhelmfermey     #+#    #+#             */
-/*   Updated: 2022/03/02 14:23:30 by wilhelmfermey    ###   ########.fr       */
+/*   Updated: 2022/03/03 09:02:44 by wfermey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_exa_len(unsigned int nb)
 	int	len;
 
 	len = 0;
+	if (nb == 0)
+		len++;
 	while (nb)
 	{
 		len++;

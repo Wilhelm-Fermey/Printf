@@ -6,7 +6,7 @@
 /*   By: wfermey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 11:13:59 by wfermey           #+#    #+#             */
-/*   Updated: 2022/03/02 14:37:50 by wilhelmfermey    ###   ########.fr       */
+/*   Updated: 2022/03/03 09:08:04 by wfermey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_if_forest(char c, va_list list)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	if (c == 'c')
@@ -30,7 +30,7 @@ int	ft_if_forest(char c, va_list list)
 	else if (c == 'X')
 		len = len + ft_print_exa_maj(va_arg(list, unsigned int));
 	else if (c == 'x')
-		len = len + ft_print_exa_min(va_arg(list, unsigned int)); 
+		len = len + ft_print_exa_min(va_arg(list, unsigned int));
 	else if (c == '%')
 		len = len + ft_print_percent();
 	return (len);
@@ -50,7 +50,7 @@ int	ft_read(const char *str, va_list list)
 		if (str[i] == '%')
 		{
 			i++;
-			len	= len + ft_if_forest(str[i], list);
+			len = len + ft_if_forest(str[i], list);
 		}
 		else
 		{

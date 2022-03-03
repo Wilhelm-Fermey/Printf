@@ -6,7 +6,7 @@
 /*   By: wilhelmfermey <marvin@42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 08:27:25 by wilhelmfermey     #+#    #+#             */
-/*   Updated: 2022/03/02 14:33:59 by wilhelmfermey    ###   ########.fr       */
+/*   Updated: 2022/03/03 08:52:56 by wfermey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_intlen_un(unsigned int nb)
 	int	count;
 
 	count = 0;
+	if (nb == 0)
+		count++;
 	while (nb)
 	{
 		count++;
